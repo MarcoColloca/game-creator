@@ -22,6 +22,7 @@
                     <th scope="col">Weight</th>
                     <th scope="col">Cost</th>
                     <th class="text-center" scope="col">Damage Dice</th>
+                    <th scope="col">Image</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +35,7 @@
                         <td>{{$weapon->weight}}</td>
                         <td>{{$weapon->cost}}</td>
                         <td class="text-center">{{$weapon->damage_dice}}</td>
+                        <td><img src="{{Vite::asset("resources/img/$weapon->image.png")}}" alt=""></td>
                     </tr>
                 @endforeach
             </tbody>

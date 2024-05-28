@@ -28,7 +28,7 @@ class WeaponSeeder extends Seeder
                 $weapon->weight = $row[4];
                 $weapon->cost = $row[5];
                 $weapon->damage_dice = $row[6];
-
+                $weapon->image = strtolower(str_replace(' ', '-', $weapon->category));
                 $weapon->save();
                 //dump($weapon);
             }

@@ -20,6 +20,9 @@
                 <div class="col-1">
                     <a class="text-center" href="{{route('weapon')}}">Weapons</a>
                 </div>
+                <div class="col-1">
+                    <a class="text-center" href="{{route('characters.index')}}">Characters</a>
+                </div>
             </div>
         </div>
         

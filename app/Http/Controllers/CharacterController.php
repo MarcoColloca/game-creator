@@ -58,7 +58,7 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        //
+        return view("characters.edit", compact("character"));
     }
 
     /**
@@ -66,7 +66,20 @@ class CharacterController extends Controller
      */
     public function update(Request $request, Character $character)
     {
-        //
+        //VALIDATION
+        $request->validate([
+            "name"=> "required|max:200",
+            "attack"=> "required|integer|numeric",
+            "defence"=> "required|integer|numeric",
+            "speed"=> "required|integer|numeric",
+            "life"=> "required|integer|numeric",
+            "description"=> "required|max:2000",
+        ]);
+        $form_data = $request->all();
+        $character->fill($form_data);
+
+        $character->save();
+        return to_route("characters.show", $character);
     }
 
     /**
@@ -74,6 +87,7 @@ class CharacterController extends Controller
      */
     public function destroy(Character $character)
     {
-        //
+        $character->delete();
+        return to_route("characters.index");
     }
 }

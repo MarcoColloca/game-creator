@@ -23,6 +23,8 @@
                     <th scope="col">Speed</th>
                     <th scope="col">Life</th>
                     <th scope="col">Mostra</th>
+                    <th scope="col">Modifica</th>
+                    <th scope="col">Elimina</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +37,8 @@
                         <td>{{$character->speed}}</td>
                         <td>{{$character->life}}</td>
                         <td class="text-center"><a class="link-success" href="{{ route('characters.show', $character) }}">Link</a></td>
+                        <td class="text-center"><a class="link-primary" href="{{ route('characters.edit', $character) }}">Link</a></td>
+                        <td class="text-center"><a class="link-danger" href="{{ route('characters.destroy', $character) }}">Link</a></td>
                     </tr>
                 @endforeach
             </tbody>

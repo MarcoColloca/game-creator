@@ -21,6 +21,7 @@
                     <th scope="col">Defense</th>
                     <th scope="col">Speed</th>
                     <th scope="col">Life</th>
+                    <th scope="col">Mostra</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,7 @@
                         <td>{{$character->defense}}</td>
                         <td>{{$character->speed}}</td>
                         <td>{{$character->life}}</td>
+                        <td class="text-center"><a class="link-success" href="{{ route('characters.show', $character) }}">Link</a></td>
                     </tr>
                 @endforeach
             </tbody>

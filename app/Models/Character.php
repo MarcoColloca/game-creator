@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Character extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'attack', 'defence', 'speed', 'life', 'description'];
 }

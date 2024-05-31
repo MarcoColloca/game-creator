@@ -16,7 +16,7 @@
             <div class="card-body text-center">
                 <h3>{{ $character->name }}</h3>
                 <p>Attacco: {{ $character->attack }}</p>
-                <p>Difesa: {{ $character->defense }}</p>
+                <p>Difesa: {{ $character->defence }}</p>
                 <p>Velocità: {{ $character->speed }}</p>
                 <p>Punti Ferita: {{ $character->life }}</p>
                 <p>Descrizione: {{ $character->description }}</p>

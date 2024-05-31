@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name',200);
             $table->text('description');
             $table->smallInteger('attack');
-            $table->smallInteger('defense');
+            $table->smallInteger('defence');
             $table->smallInteger('speed');
             $table->smallInteger('life');
             $table->timestamps();

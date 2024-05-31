@@ -36,9 +36,19 @@
                         <td>{{$character->defence}}</td>
                         <td>{{$character->speed}}</td>
                         <td>{{$character->life}}</td>
-                        <td class="text-center"><a class="link-success" href="{{ route('characters.show', $character) }}">Link</a></td>
-                        <td class="text-center"><a class="link-primary" href="{{ route('characters.edit', $character) }}">Link</a></td>
-                        <td class="text-center"><a class="link-danger" href="{{ route('characters.destroy', $character) }}">Link</a></td>
+                        <td class="text-center"><a class="link-success"
+                                href="{{ route('characters.show', $character) }}">Info</a></td>
+                        <td class="text-center"><a class="link-primary"
+                                href="{{ route('characters.edit', $character) }}">Modifica</a></td>
+                        <td class="text-center">
+                            <form action="{{ route('characters.destroy', $character) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+
+                                <button class="btn btn-link link-danger">Elimina</button>
+
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

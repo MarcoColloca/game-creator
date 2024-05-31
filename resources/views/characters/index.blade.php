@@ -42,8 +42,8 @@
                                 href="{{ route('characters.edit', $character) }}">Modifica</a></td>
                         <td class="text-center">
                             <form action="{{ route('characters.destroy', $character) }}" method="POST">
-                                @method('DELETE')
                                 @csrf
+                                @method('DELETE')
 
                                 <button class="btn btn-link link-danger">Elimina</button>
 

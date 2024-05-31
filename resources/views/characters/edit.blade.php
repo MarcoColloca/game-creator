@@ -18,32 +18,32 @@
             <div class="mb-3">
                 <label for="name" class="form-label">Nome</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Inserisci il nome"
-                    value="{{ old('name') }}">
+                    value="{{ old('name', $character->name) }}">
             </div>
             <div class="mb-3">
                 <label for="attack" class="form-label">Attacco</label>
                 <input type="number" class="form-control" id="attack" name="attack" placeholder="Inserisci il valore"
-                    value="{{ old('attack') }}">
+                    value="{{ old('attack', $character->attack) }}">
             </div>
             <div class="mb-3">
                 <label for="defence" class="form-label">Difesa</label>
                 <input type="number" class="form-control" id="defence" name="defence" placeholder="Inserisci il valore"
-                    value="{{ old('defence') }}">
+                    value="{{ old('defence', $character->defence) }}">
             </div>
             <div class="mb-3">
                 <label for="life" class="form-label">Punti ferita</label>
                 <input type="number" class="form-control" id="life" name="life" placeholder="Inserisci il valore"
-                    value="{{ old('life') }}">
+                    value="{{ old('life', $character->life) }}">
             </div>
             <div class="mb-3">
                 <label for="speed" class="form-label">Velocità</label>
                 <input type="number" class="form-control" id="speed" name="speed" placeholder="Inserisci il valore"
-                    value="{{ old('speed') }}">
+                    value="{{ old('speed', $character->speed) }}">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
                 <textarea class="form-control" id="description" name="description"
-                    placeholder="Inserisci la descrizione">{{ old('description') }}</textarea>
+                    placeholder="Inserisci la descrizione">{{ old('description', $character->description) }}</textarea>
             </div>
             <button class="btn btn-primary">Modifica</button>
         </form>

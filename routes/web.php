@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CharacterController;
-use App\Http\Controllers\WeaponController;
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +20,7 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/weapon', [WeaponController::class, 'weapon'])->name('weapon');
+Route::get('/item', [ItemController::class, 'item'])->name('item');
 
 Route::resource('characters', CharacterController::class);
 

@@ -18,7 +18,7 @@
                     <a class="text-center" href="{{route('home')}}"> Home </a>
                 </div>
                 <div class="col-1">
-                    <a class="text-center" href="{{route('weapon')}}">Weapons</a>
+                    <a class="text-center" href="{{route('item')}}">Weapons</a>
                 </div>
                 <div class="col-1">
                     <a class="text-center" href="{{route('characters.index')}}">Characters</a>

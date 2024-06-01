@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Weapons')
+@section('title', 'Items')
 
 @section('main-content')
 <section class="mt-5 py-1">
     <div class="container bg-dark py-4">
-        <h1 class="title text-center text-success">Weapons!</h1>
+        <h1 class="title text-center text-success">Items!</h1>
     </div>
 </section>
 
@@ -26,16 +26,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($weapons as $weapon)                
+                @foreach ($items as $item)                
                     <tr>
-                        <td>{{$weapon->name}}</td>
-                        <td>{{$weapon->slug}}</td>
-                        <td>{{$weapon->type}}</td>
-                        <td>{{$weapon->category}}</td>
-                        <td>{{$weapon->weight}}</td>
-                        <td>{{$weapon->cost}}</td>
-                        <td class="text-center">{{$weapon->damage_dice}}</td>
-                        <td><img src="{{Vite::asset("resources/img/$weapon->image.png")}}" alt=""></td>
+                        <td>{{$item->name}}</td>
+                        <td>{{$item->slug}}</td>
+                        <td>{{$item->type}}</td>
+                        <td>{{$item->category}}</td>
+                        <td>{{$item->weight}}</td>
+                        <td>{{$item->cost}}</td>
+                        <td class="text-center">{{$item->damage_dice}}</td>
+                        <td><img src="{{Vite::asset("resources/img/$item->image.png")}}" alt=""></td>
                     </tr>
                 @endforeach
             </tbody>

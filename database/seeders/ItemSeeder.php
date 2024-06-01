@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Weapon;
+use App\Models\Item;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class WeaponSeeder extends Seeder
+class ItemSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,18 +19,18 @@ class WeaponSeeder extends Seeder
         //
         foreach ($data as $index => $row) {
             if($index !== 0){
-                $weapon = new Weapon;
+                $item = new Item;
 
-                $weapon->name = $row[0];
-                $weapon->slug = $row[1];
-                $weapon->type = $row[2];
-                $weapon->category = $row[3];
-                $weapon->weight = $row[4];
-                $weapon->cost = $row[5];
-                $weapon->damage_dice = $row[6];
-                $weapon->image = strtolower(str_replace(' ', '-', $weapon->category));
-                $weapon->save();
-                //dump($weapon);
+                $item->name = $row[0];
+                $item->slug = $row[1];
+                $item->type = $row[2];
+                $item->category = $row[3];
+                $item->weight = $row[4];
+                $item->cost = $row[5];
+                $item->damage_dice = $row[6];
+                $item->image = strtolower(str_replace(' ', '-', $item->category));
+                $item->save();
+                //dump($item);
             }
         }
     }

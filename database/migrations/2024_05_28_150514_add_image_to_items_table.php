@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('weapons', function (Blueprint $table) {
+        Schema::table('items', function (Blueprint $table) {
             $table->string('image', 255)->nullable()->default(null)->after('damage_dice');
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('weapons', function (Blueprint $table) {
+        Schema::table('items', function (Blueprint $table) {
             $table->dropColumn('image');
         });
     }

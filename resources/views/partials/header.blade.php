@@ -14,14 +14,14 @@
         
         <div class="container py-5">
             <div class="row justify-content-center">
-                <div class="col-1">
-                    <a class="text-center" href="{{route('home')}}"> Home </a>
+                <div class="col-1 text-center">
+                    <a class="" href="{{route('home')}}"> Homepage </a>
                 </div>
-                <div class="col-1">
-                    <a class="text-center" href="{{route('item')}}">Weapons</a>
+                <div class="col-1 text-center">
+                    <a class="" href="{{route('item')}}">Armi</a>
                 </div>
-                <div class="col-1">
-                    <a class="text-center" href="{{route('characters.index')}}">Characters</a>
+                <div class="col-1 text-center">
+                    <a class="" href="{{route('characters.index')}}">Personaggi</a>
                 </div>
             </div>
         </div>

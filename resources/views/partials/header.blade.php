@@ -18,10 +18,10 @@
                     <a class="" href="{{route('home')}}"> Homepage </a>
                 </div>
                 <div class="col-1 text-center">
-                    <a class="" href="{{route('item')}}">Armi</a>
+                    <a class="" href="{{route('item')}}">Items</a>
                 </div>
                 <div class="col-1 text-center">
-                    <a class="" href="{{route('characters.index')}}">Personaggi</a>
+                    <a class="" href="{{route('characters.index')}}">Characters</a>
                 </div>
             </div>
         </div>

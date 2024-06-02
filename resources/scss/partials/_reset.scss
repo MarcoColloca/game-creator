@@ -16,3 +16,12 @@ a{
 img{
     max-width: 100%;
 }
+
+input,
+textarea{
+    &:focus{
+        &::placeholder{
+            color: transparent;
+        }
+    }
+}

@@ -9,7 +9,7 @@ import.meta.glob([
 ])
 
 
-document.querySelectorAll('.character-delete-form').forEach(form => {
+document.querySelectorAll('.item-delete-form').forEach(form => {
     form.addEventListener('submit', (ev)=>{
         ev.preventDefault();
         

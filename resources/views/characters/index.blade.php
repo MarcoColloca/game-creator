@@ -43,7 +43,7 @@
                             <a class="btn link-primary" href="{{ route('characters.edit', $character) }}">Edit</a>
                         </td>
                         <td class="text-center">
-                            <form class="character-delete-form" action="{{ route('characters.destroy', $character) }}" method="POST">
+                            <form class="item-delete-form" action="{{ route('characters.destroy', $character) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
 

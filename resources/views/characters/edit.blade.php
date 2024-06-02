@@ -16,32 +16,32 @@
             @csrf
             @method('PUT')
             <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label fw-bold">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Inserisci il nome"
                     value="{{ old('name', $character->name) }}">
             </div>
             <div class="mb-3">
-                <label for="attack" class="form-label">Attack</label>
+                <label for="attack" class="form-label fw-bold">Attack</label>
                 <input type="number" class="form-control" id="attack" name="attack" placeholder="Inserisci il valore"
                     value="{{ old('attack', $character->attack) }}">
             </div>
             <div class="mb-3">
-                <label for="defence" class="form-label">Defence</label>
+                <label for="defence" class="form-label fw-bold">Defence</label>
                 <input type="number" class="form-control" id="defence" name="defence" placeholder="Inserisci il valore"
                     value="{{ old('defence', $character->defence) }}">
             </div>
             <div class="mb-3">
-                <label for="life" class="form-label">Life</label>
+                <label for="life" class="form-label fw-bold">Life</label>
                 <input type="number" class="form-control" id="life" name="life" placeholder="Inserisci il valore"
                     value="{{ old('life', $character->life) }}">
             </div>
             <div class="mb-3">
-                <label for="speed" class="form-label">Speed</label>
+                <label for="speed" class="form-label fw-bold">Speed</label>
                 <input type="number" class="form-control" id="speed" name="speed" placeholder="Inserisci il valore"
                     value="{{ old('speed', $character->speed) }}">
             </div>
             <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
+                <label for="description" class="form-label fw-bold">Description</label>
                 <textarea class="form-control" id="description" name="description"
                     placeholder="Inserisci la descrizione">{{ old('description', $character->description) }}</textarea>
             </div>

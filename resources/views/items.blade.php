@@ -32,8 +32,8 @@
                         <td>{{$item->slug}}</td>
                         <td>{{$item->type}}</td>
                         <td>{{$item->category}}</td>
-                        <td>{{$item->weight}}</td>
-                        <td>{{$item->cost}}</td>
+                        <td>{{$item->weight . ' ' . $item->unit}}.</td>
+                        <td>{{$item->cost . ' ' . $item->coin}}</td>
                         <td class="text-center">{{$item->damage_dice}}</td>
                         <td><img src="{{Vite::asset("resources/img/$item->image.png")}}" alt=""></td>
                     </tr>

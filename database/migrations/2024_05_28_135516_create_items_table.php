@@ -17,8 +17,10 @@ return new class extends Migration
             $table->string('slug', 50);
             $table->string('type', 50);
             $table->string('category', 50);
-            $table->string('weight', 20);
-            $table->string('cost', 20);
+            $table->unsignedFloat('weight', 8, 2);
+            $table->string('unit', 20);
+            $table->unsignedMediumInteger('cost');
+            $table->string('coin', 20);            
             $table->string('damage_dice', 10);
             $table->timestamps();
         });

@@ -29,7 +29,7 @@
             </thead>
             <tbody>
                 @foreach ($items as $item)                
-                    <tr>
+                    <tr class="position-relative">
                         <td>{{$item->name}}</td>
                         <td>{{$item->slug}}</td>
                         <td>{{$item->type}}</td>

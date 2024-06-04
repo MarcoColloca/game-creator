@@ -2,7 +2,7 @@
 
 @section('title', 'Items')
 
-@section('main-content')
+@section('content')
 <section class="mt-5 py-1">
     <div class="container bg-dark py-4">
         <h1 class="title text-center text-success">Items!</h1>

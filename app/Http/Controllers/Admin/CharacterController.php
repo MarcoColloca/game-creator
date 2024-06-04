@@ -42,6 +42,9 @@ class CharacterController extends Controller
         ]);
         $form_data = $request->all();
 
+
+
+        
         $new_character = Character::create($form_data);
         return to_route("characters.show", $new_character);
     }

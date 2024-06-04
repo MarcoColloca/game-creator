@@ -4,8 +4,8 @@
 
 @section('content')
 <section class="mt-5 py-1">
-    <div class="container bg-dark py-4">
-        <h1 class="title text-center text-success">Items!</h1>
+    <div class="container bg-dark py-4 text-center">
+        <h1 class="title text-success">Items!</h1>
         <a href="{{ route('items.create') }}" class="btn btn-success mt-3">Create your Item</a>
 
     </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class ItemController extends Controller
 {
@@ -70,7 +71,7 @@ class ItemController extends Controller
 
         dump($form_data);
 
-        return to_route('items.index');
+        return to_route('items.show', $new_item);
     }
 
     /**
@@ -86,7 +87,7 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
-        //
+        return view("items.edit", compact("item"));
     }
 
     /**
@@ -94,7 +95,32 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        //
+        $request->validate([
+            "name"=> "required|max:50",
+            "slug" => ['required', 'max:255', Rule::unique('items','slug')->ignore($item->id)],
+            "category"=> "required|max:50",
+            "weight"=> "required|numeric",
+            "cost"=> "required|integer|numeric",
+            "coin"=> "required|string|max:20",
+            "damage_dice" => "required|string|max:10"
+        ]);
+        
+        $form_data = $request->all();
+        
+
+        $form_data['type'] = 'Weapons';
+        $form_data['unit'] = 'lb';
+        $form_data['image'] = strtolower(str_replace(' ', '-', $form_data['category']));
+
+
+       
+
+
+       // dd($form_data);
+
+        $item->update($form_data);
+
+        return to_route('items.show', $item);
     }
 
     /**

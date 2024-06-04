@@ -38,6 +38,29 @@
                         <td>{{$item->cost . ' ' . $item->coin}}</td>
                         <td class="text-center">{{$item->damage_dice}}</td>
                         <td><img src="{{Vite::asset("resources/img/$item->image.png")}}" alt=""></td>
+                        <td class="text-center">
+                            <a class="btn link-success" href="{{ route('items.show', $item) }}">Show</a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn link-primary" href="{{ route('items.edit', $item) }}">Edit</a>
+                        </td>
+                        <td class="text-center">
+                            <form class="item-delete-form" action="{{ route('items.destroy', $item) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+
+                                <button class="btn link-danger">X</button>
+
+                                <div class="my-modal">
+                                    <div class="my-modal__box">
+                                        <h5 class="text-center me-5">Do you really want to delete this Character?!</h5>
+                                        <span class="link link-danger my-modal-yes mx-5">Yes</span>
+                                        <span class="link link-success my-modal-no">No</span>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

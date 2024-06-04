@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\CharacterController;
-use App\Http\Controllers\ItemController;
+use App\Http\Controllers\Admin\CharacterController;
+use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +33,8 @@ Route::middleware('auth')
 ->group(function(){
     
     
-    Route::get('/item', [ItemController::class, 'item'])->name('item');
+    //Route::get('/item', [ItemController::class, 'item'])->name('item');
+    Route::resource('items', ItemController::class);
     
     Route::resource('characters', CharacterController::class);
 });

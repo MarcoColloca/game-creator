@@ -22,6 +22,10 @@
                     <p> <span class="fw-bold"> Weight: </span> {{ $item->weight . ' ' . $item->unit }}</p>
                     <p> <span class="fw-bold"> Cost: </span> {{$item->cost . ' ' . $item->coin}}</p>
                     <p> <span class="fw-bold"> Damage Dice:  </span>{{$item->damage_dice}}</p>
+                    <h4>Description:</h4>
+                    <p>
+                        {{$item->description}}
+                    </p>
                 </div>
             </div>
         </div>

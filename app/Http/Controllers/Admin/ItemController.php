@@ -35,6 +35,7 @@ class ItemController extends Controller
     {
         $request->validate([
             "name"=> "required|max:50",
+            "description" => "nullable|max:2000",
             "category"=> "required|max:50",
             "weight"=> "required|numeric",
             "cost"=> "required|integer|numeric",
@@ -96,7 +97,8 @@ class ItemController extends Controller
     public function update(Request $request, Item $item)
     {
         $request->validate([
-            "name"=> "required|max:50",
+            "name" => "required|max:50",
+            "description" => "nullable|max:2000",
             "slug" => ['required', 'max:255', Rule::unique('items','slug')->ignore($item->id)],
             "category"=> "required|max:50",
             "weight"=> "required|numeric",
@@ -129,7 +131,7 @@ class ItemController extends Controller
     public function destroy(Item $item)
     {
         $item->delete();
-        
+
         return to_route("items.index");
     }
 }

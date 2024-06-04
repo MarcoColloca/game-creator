@@ -86,6 +86,7 @@ class ItemSeeder extends Seeder
                 $item->coin = $itemCoin;
                 $item->damage_dice = $row[6];
                 $item->image = strtolower(str_replace(' ', '-', $item->category));
+                $item->description = null;
                 $item->save();
                 //dump($item);
             }

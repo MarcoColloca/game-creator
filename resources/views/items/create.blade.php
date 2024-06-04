@@ -60,6 +60,15 @@
                 <option value="2d6">2d6</option>
             </select>
 
+
+            <div class="mb-3">
+                <label for="description" class="form-label fw-bold">Description</label>
+                <textarea class="form-control" id="description" name="description" placeholder="Describe your item">
+                    {{ old('description') }}
+                </textarea>
+            </div>
+
+
             <button class="btn btn-primary">Create</button>
         </form>
     </div>

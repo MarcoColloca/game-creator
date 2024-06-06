@@ -6,7 +6,7 @@
 <section class="mt-5 py-1">
     <div class="container bg-dark py-4 text-center">
         <h1 class="title text-success">Items!</h1>
-        <a href="{{ route('items.create') }}" class="btn btn-success mt-3">Create your Item</a>
+        <a href="{{ route('admin.items.create') }}" class="btn btn-success mt-3">Create your Item</a>
 
     </div>
 </section>
@@ -39,13 +39,13 @@
                         <td class="text-center">{{$item->damage_dice}}</td>
                         <td><img src="{{Vite::asset("resources/img/$item->image.png")}}" alt=""></td>
                         <td class="text-center">
-                            <a class="btn link-success" href="{{ route('items.show', $item) }}">Show</a>
+                            <a class="btn link-success" href="{{ route('admin.items.show', $item) }}">Show</a>
                         </td>
                         <td class="text-center">
-                            <a class="btn link-primary" href="{{ route('items.edit', $item) }}">Edit</a>
+                            <a class="btn link-primary" href="{{ route('admin.items.edit', $item) }}">Edit</a>
                         </td>
                         <td class="text-center">
-                            <form class="item-delete-form" action="{{ route('items.destroy', $item) }}" method="POST">
+                            <form class="item-delete-form" action="{{ route('admin.items.destroy', $item) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
 

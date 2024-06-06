@@ -27,10 +27,13 @@
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('items.index')}}">{{ __('Items') }}</a>
+                            <a class="nav-link" href="{{route('admin.items.index')}}">{{ __('Items') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('characters.index')}}">{{ __('Characters') }}</a>
+                            <a class="nav-link" href="{{route('admin.characters.index')}}">{{ __('Characters') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.types.index')}}">{{ __('Types') }}</a>
                         </li>
                     </ul>
 

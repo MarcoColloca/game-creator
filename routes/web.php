@@ -31,6 +31,8 @@ Route::get('/dashboard', function () {
 
 
 Route::middleware('auth')
+->name('admin.') // il prefisso che viene aggiunto a tutti i NOMI delle rotte nel gruppo
+->prefix('admin') // il prefisso che viene aggiunto a tutti gli URL delle rotte nel gruppo
 ->group(function(){
     
     

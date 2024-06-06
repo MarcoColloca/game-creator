@@ -6,7 +6,7 @@
 <section class="mt-5 py-1">
     <div class="container bg-dark py-4 text-center">
         <h1 class="title  text-success">Characters!</h1>
-        <a href="{{ route('characters.create') }}" class="btn btn-success mt-3">Create your Character</a>
+        <a href="{{ route('admin.characters.create') }}" class="btn btn-success mt-3">Create your Character</a>
     </div>
 </section>
 
@@ -37,13 +37,13 @@
                         <td>{{$character->life}}</td>
                         <td>{{$character->description}}</td>
                         <td class="text-center">
-                            <a class="btn link-success" href="{{ route('characters.show', $character) }}">Show</a>
+                            <a class="btn link-success" href="{{ route('admin.characters.show', $character) }}">Show</a>
                         </td>
                         <td class="text-center">
-                            <a class="btn link-primary" href="{{ route('characters.edit', $character) }}">Edit</a>
+                            <a class="btn link-primary" href="{{ route('admin.characters.edit', $character) }}">Edit</a>
                         </td>
                         <td class="text-center">
-                            <form class="item-delete-form" action="{{ route('characters.destroy', $character) }}" method="POST">
+                            <form class="item-delete-form" action="{{ route('admin.characters.destroy', $character) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
 

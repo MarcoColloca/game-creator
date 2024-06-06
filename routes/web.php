@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CharacterController;
 use App\Http\Controllers\Admin\ItemController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,8 @@ Route::middleware('auth')
 ->group(function(){
     
     
+    Route::resource('types', TypeController::class);
+
     //Route::get('/item', [ItemController::class, 'item'])->name('item');
     Route::resource('items', ItemController::class);
     

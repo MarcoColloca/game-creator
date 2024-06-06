@@ -42,7 +42,7 @@
     
                                     <div class="my-modal">
                                         <div class="my-modal__box">
-                                            <h5 class="text-center me-5">Do you really want to delete this type?!</h5>
+                                            <h6 class="text-center me-5">Do you really want to delete this type?!</h6>
                                             <span class="link link-danger my-modal-yes mx-5">Yes</span>
                                             <span class="link link-success my-modal-no">No</span>
                                         </div>

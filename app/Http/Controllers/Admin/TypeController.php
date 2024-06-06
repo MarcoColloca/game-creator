@@ -59,9 +59,14 @@ class TypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Type $type)
+    public function update(StoreTypeRequest $request, Type $type)
     {
-        //
+        $form_data = $request->validated();
+        $type->fill($form_data);
+
+        $type->save();
+
+        return to_route("admin.types.index");
     }
 
     /**

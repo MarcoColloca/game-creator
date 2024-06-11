@@ -44,25 +44,10 @@ class ItemController extends Controller
         ]);
         
         $form_data = $request->all();
-        
-        $base_slug = Str::slug($form_data['name']);
-        $slug = $base_slug;
-        $n = 0;
-        
-        do{
-
-            $find = Item::where('slug', $slug)->first(); // null | Item
-
-            if ($find !== null) {
-                $n++;
-                $slug = $base_slug . '-' .$n;
-            }
-
-        }while($find !== null);
 
 
 
-        $form_data['slug'] = $slug;
+        $form_data['slug'] = Item::getUniqueSlug($form_data['name']);
         $form_data['type'] = 'Weapons';
         $form_data['unit'] = 'lb';
         $form_data['image'] = strtolower(str_replace(' ', '-', $form_data['category']));

@@ -46,6 +46,7 @@ class CharacterController extends Controller
             "speed"=> "required|integer|numeric",
             "life"=> "required|integer|numeric",
             "description"=> "required|max:2000",
+            "items" => "exists:items,id"
         ]);
         $form_data = $request->all();
 

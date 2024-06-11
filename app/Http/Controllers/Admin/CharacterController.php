@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCharacterRequest;
+use App\Http\Requests\UpdateCharacterRequest;
 use App\Models\Character;
 use App\Models\Item;
 use Illuminate\Http\Request;
@@ -33,22 +35,14 @@ class CharacterController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCharacterRequest $request)
     {
         //dd($request->all());
 
 
-        //VALIDATION
-        $request->validate([
-            "name"=> "required|max:200",
-            "attack"=> "required|integer|numeric",
-            "defence"=> "required|integer|numeric",
-            "speed"=> "required|integer|numeric",
-            "life"=> "required|integer|numeric",
-            "description"=> "required|max:2000",
-            "items" => "exists:items,id"
-        ]);
-        $form_data = $request->all();
+        //VALIDATION SPOSTATA NELLO StoreCharacterRequest
+
+        $form_data = $request->validated();
 
 
 
@@ -89,18 +83,11 @@ class CharacterController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Character $character)
+    public function update(UpdateCharacterRequest $request, Character $character)
     {
-        //VALIDATION
-        $request->validate([
-            "name"=> "required|max:200",
-            "attack"=> "required|integer|numeric",
-            "defence"=> "required|integer|numeric",
-            "speed"=> "required|integer|numeric",
-            "life"=> "required|integer|numeric",
-            "description"=> "required|max:2000",
-        ]);
-        $form_data = $request->all();
+        //VALIDATION SPOSTATA NELL'UpdateCharacterRequest
+
+        $form_data = $request->validated();
         $character->fill($form_data);
 
         $character->save();

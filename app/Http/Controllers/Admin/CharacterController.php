@@ -54,6 +54,8 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
+
+        $character->load(['items']);
         return view("admin.characters.show", compact("character"));
     }
 

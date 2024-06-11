@@ -26,6 +26,14 @@
                     </p>
                 </div>
             </div>
+            <div class="card my-card">
+                <div class="card-body text-center">
+                    <h2 class="mb-2">Inventario</h2>
+                    @foreach ($character->items as $item )
+                    <p>{{ $item->name }}: {{ $item->pivot->qty }}</p>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
 </section>

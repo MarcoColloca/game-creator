@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Character;
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class CharacterController extends Controller
@@ -22,8 +23,11 @@ class CharacterController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view("admin.characters.create");
+    {   
+        $items = Item::orderBy('name', 'asc')->get();
+
+
+        return view("admin.characters.create", compact('items'));
     }
 
     /**
@@ -31,6 +35,9 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
+
+
         //VALIDATION
         $request->validate([
             "name"=> "required|max:200",
@@ -46,6 +53,17 @@ class CharacterController extends Controller
 
         
         $new_character = Character::create($form_data);
+
+
+        if($request->has('items'))
+        {
+            //$project->items()->attach($form_data['items']);
+
+            $new_character->items()->attach($request->items);
+
+        }
+
+
         return to_route("admin.characters.show", $new_character);
     }
 

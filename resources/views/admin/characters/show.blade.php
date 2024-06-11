@@ -12,7 +12,7 @@
 
 <section class="mb-5 py-1">
     <div class="bg-light container py-4">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center gap-5">
             <div class="card my-card">
                 <div class="card-body text-center">
                     <h2 class="mb-2">{{ $character->name }}</h2>
@@ -28,10 +28,12 @@
             </div>
             <div class="card my-card">
                 <div class="card-body text-center">
-                    <h2 class="mb-2">Inventario</h2>
-                    @foreach ($character->items as $item )
-                    <p>{{ $item->name }}: {{ $item->pivot->qty }}</p>
-                    @endforeach
+                    <h2 class="mb-2">Inventory</h2>
+                    <ul>
+                        @foreach ($character->items as $item )
+                            <li class="text-start">{{ $item->name }}: {{ $item->pivot->qty }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>

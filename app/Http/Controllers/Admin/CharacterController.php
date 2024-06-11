@@ -77,7 +77,12 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        return view("admin.characters.edit", compact("character"));
+
+        $character->load(['items']);
+
+        $items = Item::orderBy('name', 'asc')->get();
+
+        return view("admin.characters.edit", compact("character", 'items'));
     }
 
     /**
@@ -91,6 +96,9 @@ class CharacterController extends Controller
         $character->fill($form_data);
 
         $character->save();
+
+        $character->items()->sync($request->items ?? []);
+
         return to_route("admin.characters.show", $character);
     }
 

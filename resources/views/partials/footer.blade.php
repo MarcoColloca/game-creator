@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col py-3">
                     <h1 class="text-success text-center">
-                        Sono un Footer Bello!
+                        I am a Wonderful Footer!
                     </h1>                       
                 </div>               
             </div>

@@ -5,8 +5,8 @@
 @section('content')
 <section class="mt-5 py-1">
     <div class="container bg-dark py-4 text-center">
-        <h1 class="title  text-success">types!</h1>
-        <a href="{{ route('admin.types.create') }}" class="btn btn-success mt-3">Create your type</a>
+        <h1 class="title  text-success">Classes!</h1>
+        <a href="{{ route('admin.types.create') }}" class="btn btn-success mt-3">Create your class</a>
     </div>
 </section>
 

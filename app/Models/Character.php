@@ -10,4 +10,10 @@ class Character extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'attack', 'defence', 'speed', 'life', 'description'];
+
+
+    public function items()
+    {
+        return $this->belongsToMany(Item::class);
+    }
 }

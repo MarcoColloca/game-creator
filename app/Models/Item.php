@@ -10,4 +10,10 @@ class Item extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'slug', 'type', 'category', 'weight', 'unit', 'cost', 'coin', 'damage_dice', 'image', 'description'];
+
+
+    public function characters()
+    {
+        return $this->belongsToMany(Character::class);
+    }
 }

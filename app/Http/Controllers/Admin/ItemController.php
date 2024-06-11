@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreItemRequest;
+use App\Http\Requests\UpdateItemRequest;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -31,19 +33,11 @@ class ItemController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreItemRequest $request)
     {
-        $request->validate([
-            "name"=> "required|max:50",
-            "description" => "nullable|max:2000",
-            "category"=> "required|max:50",
-            "weight"=> "required|numeric",
-            "cost"=> "required|integer|numeric",
-            "coin"=> "required|string|max:20",
-            "damage_dice" => "required|string|max:10"
-        ]);
+
         
-        $form_data = $request->all();
+        $form_data = $request->validated();
 
 
 
@@ -79,20 +73,10 @@ class ItemController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Item $item)
+    public function update(UpdateItemRequest $request, Item $item)
     {
-        $request->validate([
-            "name" => "required|max:50",
-            "description" => "nullable|max:2000",
-            "slug" => ['required', 'max:255', Rule::unique('items','slug')->ignore($item->id)],
-            "category"=> "required|max:50",
-            "weight"=> "required|numeric",
-            "cost"=> "required|integer|numeric",
-            "coin"=> "required|string|max:20",
-            "damage_dice" => "required|string|max:10"
-        ]);
-        
-        $form_data = $request->all();
+
+        $form_data = $request->validated();
         
 
         $form_data['type'] = 'Weapons';

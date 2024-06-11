@@ -35,7 +35,7 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
-
+        // VALIDATION SPOSTATA NELLO StoreItemRequest
         
         $form_data = $request->validated();
 
@@ -76,6 +76,7 @@ class ItemController extends Controller
     public function update(UpdateItemRequest $request, Item $item)
     {
 
+        // VALIDATION SPOSTATA NELL'UpdateItemRequest
         $form_data = $request->validated();
         
 

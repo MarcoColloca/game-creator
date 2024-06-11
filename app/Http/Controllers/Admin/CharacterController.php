@@ -85,7 +85,7 @@ class CharacterController extends Controller
      */
     public function update(UpdateCharacterRequest $request, Character $character)
     {
-        //VALIDATION SPOSTATA NELL'UpdateCharacterRequest
+        // VALIDATION SPOSTATA NELL'UpdateCharacterRequest
 
         $form_data = $request->validated();
         $character->fill($form_data);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guest\CharacterController as GuestCharacterController;
 use App\Http\Controllers\Admin\CharacterController;
 use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\TypeController;
@@ -21,6 +22,13 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+
+
+Route::name('guest.')
+->prefix('guest')
+->group(function(){
+    Route::resource('characters', GuestCharacterController::class)->only('index', 'show');
+});
 
 
 

@@ -24,18 +24,32 @@
                         <!-- Content of the Button for Small Responsive Layout -->
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="w-100 navbar-nav d-flex align-items-center justify-content-center gap-3">
+                                <!-- Homepage -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                                 </li>
+                                <!-- Admin Items -->
+                                @auth
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('admin.items.index')}}">{{ __('Items') }}</a>
                                 </li>
+                                @endif
+                                <!-- Admin Index -->
+                                @auth
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('admin.characters.index')}}">{{ __('Characters') }}</a>
                                 </li>
+                                @else 
+                                <!-- Guest Index -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('guest.characters.index')}}">{{ __('Characters') }}</a>
+                                </li>
+                                @endif
+                                @auth
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('admin.types.index')}}">{{ __('Classes') }}</a>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                     </div>

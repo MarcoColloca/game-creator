@@ -33,7 +33,7 @@ class CharacterSeeder extends Seeder
             $new_character->save();
             // dd($item_ids);
 
-            // $random_item_ids = $faker->randomElements($item_ids, null);
+            $random_item_ids = $faker->randomElements($item_ids, null);
 
             // $random_qty = rand(1,11);
 
@@ -42,7 +42,7 @@ class CharacterSeeder extends Seeder
 
             $random_qty = [];
 
-            foreach ($item_ids as $item_id) {
+            foreach ($random_item_ids as $item_id) {
                 $random_qty[$item_id] = ['qty' => rand(1,11)];
             }
 

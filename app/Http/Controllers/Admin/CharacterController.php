@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Models\Character;
 use App\Models\Item;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class CharacterController extends Controller
@@ -16,9 +17,10 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        $characters = Character::all();
+        $types = Type::orderBy('name', 'asc')->get();
+        $characters = Character::with(['type'])->get();
 
-        return view("admin.characters.index", compact("characters"));
+        return view("admin.characters.index", compact("characters", 'types'));
     }
 
     /**
@@ -27,9 +29,9 @@ class CharacterController extends Controller
     public function create()
     {   
         $items = Item::orderBy('name', 'asc')->get();
+        $types = Type::orderBy('name', 'asc')->get();
 
-
-        return view("admin.characters.create", compact('items'));
+        return view("admin.characters.create", compact('items', 'types'));
     }
 
     /**
@@ -68,7 +70,8 @@ class CharacterController extends Controller
     public function show(Character $character)
     {
 
-        $character->load(['items']);
+        $character->load(['items', 'type']);
+
         return view("admin.characters.show", compact("character"));
     }
 
@@ -78,11 +81,12 @@ class CharacterController extends Controller
     public function edit(Character $character)
     {
 
-        $character->load(['items']);
+        $character->load(['items', 'type']);
 
         $items = Item::orderBy('name', 'asc')->get();
+        $types = Type::orderBy('name', 'asc')->get();
 
-        return view("admin.characters.edit", compact("character", 'items'));
+        return view("admin.characters.edit", compact("character", 'items', 'types'));
     }
 
     /**

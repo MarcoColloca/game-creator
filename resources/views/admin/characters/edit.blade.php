@@ -23,6 +23,17 @@
                     value="{{ old('name', $character->name) }}">
             </div>
 
+            <!-- Character Class -->
+            <div class="form-group mb-3">
+                <label for="type_id">Character Class</label>
+                <select class="form-control" name="type_id" id="type_id">
+                    <option value="">-- Select your Class --</option>
+                    @foreach ($types as $type)                        
+                        <option @selected($type->id == old('type_id', $character->type_id)) value="{{$type->id}}">{{$type->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <!-- Character Attack -->
             <div class="mb-3">
                 <label for="attack" class="form-label fw-bold">Attack</label>

@@ -28,7 +28,8 @@ class StoreCharacterRequest extends FormRequest
             "speed"=> "required|integer|numeric",
             "life"=> "required|integer|numeric",
             "description"=> "required|max:2000",
-            "items" => "exists:items,id"
+            "items" => "exists:items,id",
+            "type_id" => "exists:types,id"
         ];
     }
 }

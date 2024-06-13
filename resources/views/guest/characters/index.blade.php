@@ -21,7 +21,7 @@
                     <th class="text-center" scope="col">Defence</th>
                     <th class="text-center" scope="col">Speed</th>
                     <th class="text-center" scope="col">Life</th>
-                    <th scope="col">Description</th>
+                    <th scope="col">Class</th>
                     <th class="text-center" scope="col">Show</th>
                 </tr>
             </thead>
@@ -33,7 +33,7 @@
                         <td>{{$character->defence}}</td>
                         <td>{{$character->speed}}</td>
                         <td>{{$character->life}}</td>
-                        <td>{{$character->description}}</td>
+                        <td>{{$character->type->name}}</td>
                         <td class="text-center">
                             <a class="btn link-success" href="{{ route('guest.characters.show', $character) }}">Show</a>
                         </td>

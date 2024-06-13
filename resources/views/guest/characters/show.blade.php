@@ -15,7 +15,8 @@
         <div class="row justify-content-center gap-5">
             <div class="card my-card">
                 <div class="card-body text-center">
-                    <h2 class="mb-2">{{ $character->name }}</h2>
+                    <h2 class="mb-4">{{ $character->name }}</h2>
+                    <p> <span class="fw-bold"> Class:  </span>{{ $character->type->name }}</p>
                     <p> <span class="fw-bold"> Defence:  </span>{{ $character->defence }}</p>
                     <p> <span class="fw-bold"> Speed: </span> {{ $character->speed }}</p>
                     <p> <span class="fw-bold"> Life: </span> {{ $character->life }}</p>

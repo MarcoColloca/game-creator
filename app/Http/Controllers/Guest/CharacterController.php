@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use App\Models\Character;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class CharacterController extends Controller
@@ -13,12 +14,14 @@ class CharacterController extends Controller
     */
     public function index(Request $request)
     {
+        $types = Type::orderBy('name', 'asc')->get();
+        $characters = Character::with(['type'])->get();
 
         
         $characters = Character::all();
 
 
-        return view('guest.characters.index', compact('characters'));
+        return view('guest.characters.index', compact('characters', 'types'));
     }
     
 
@@ -29,7 +32,7 @@ class CharacterController extends Controller
     {
 
 
-        $character->load(['items']);
+        $character->load(['items', 'type']);
 
         return view("guest.characters.show", compact("character"));
     }

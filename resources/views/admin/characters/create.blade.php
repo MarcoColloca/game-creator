@@ -20,6 +20,17 @@
                 <input type="text" class="form-control" id="name" name="name" placeholder="Insert your name's character"
                     value="{{ old('name') }}">
             </div>
+            
+            <!-- Character Class -->
+            <div class="form-group mb-3">
+                <label class="form-label fw-bold" for="type_id">Character Class</label>
+                <select class="form-control" name="type_id" id="type_id">
+                    <option value="">-- Select your Class --</option>
+                    @foreach ($types as $type)                        
+                        <option @selected($type->id == old('type_id')) value="{{$type->id}}">{{$type->name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <!-- Charcater Attack -->
             <div class="mb-3">

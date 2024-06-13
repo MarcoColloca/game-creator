@@ -1,8 +1,12 @@
 header{
-    a{
+    height: 150px;
+    font-size: 28px;
+    
+    .nav-link:hover{
         &:hover{
-            color: #157347;
+            color: #861414;
             font-weight: bold;
         }
     }
+    
 }

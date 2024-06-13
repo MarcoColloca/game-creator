@@ -16,7 +16,7 @@
             <div class="card my-card">
                 <div class="card-body text-center">
                     <h2 class="mb-3">{{ $item->name }}</h2> 
-                    <img src="{{Vite::asset("resources/img/$item->image.png")}}" alt="">
+                    <img class="icon" src="{{Vite::asset("resources/img/$item->image.png")}}" alt="">
                     <p class="mt-3"> <span class="fw-bold"> Type: </span> {{ $item->type }}</p>
                     <p> <span class="fw-bold"> Category: </span> {{ $item->category }}</p>
                     <p> <span class="fw-bold"> Weight: </span> {{ $item->weight . ' ' . $item->unit }}</p>

@@ -37,7 +37,7 @@
                         <td>{{$item->weight . ' ' . $item->unit}}.</td>
                         <td>{{$item->cost . ' ' . $item->coin}}</td>
                         <td class="text-center">{{$item->damage_dice}}</td>
-                        <td><img src="{{Vite::asset("resources/img/$item->image.png")}}" alt=""></td>
+                        <td><img class="icon" src="{{Vite::asset("resources/img/$item->image.png")}}" alt=""></td>
                         <td class="text-center">
                             <a class="btn link-success" href="{{ route('admin.items.show', $item) }}">Show</a>
                         </td>

@@ -25,7 +25,7 @@
         @include('partials.header')
         
 
-        <main class="">
+        <main class="flex-grow-1">
             @yield('content')
         </main>
 

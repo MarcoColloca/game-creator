@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-<div class="welcome-outer-container">
+<div class="welcome-outer-container container mt-5 d-flex direction-column">
     <div class="dragon-container">
         <img class="dragon-img" src="{{Vite::asset('resources/img/dragon.png')}}" alt="">
     </div>

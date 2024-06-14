@@ -7,7 +7,7 @@
     background-image: url('/resources/img/character-bg.webp');
     background-size: cover;
     height: 100%;
-    padding-top: 100px;
+    padding-top:60px;
 }
 .card-bg{
     background-color: hsla(0, 0%, 100%, 0.2);
@@ -20,11 +20,11 @@
     background-color: black;
     color:darkorange;
    h1{
-    font-size:50px;
+    font-size:40px;
    }
 }
 .card-title{
-font-size:35px;
+font-size:30px;
 }
 .char-card{
     background-color: hsla(0, 0%, 100%, 0.322);
@@ -34,6 +34,7 @@ font-size:35px;
     margin-top: 30px;
     margin-bottom: 30px;
     p{
-        font-size:20px;
+        font-size:18px;
+        
     }
 }

@@ -5,8 +5,8 @@
 @section('content')
 <div class="char-bg">
 
-    <section class=" py-1">
-        <div class="container title-container  py-4 mb-3 rounded-3 shadow-jg">
+    <section >
+        <div class="container title-container p-2 mb-3 rounded-3 shadow-jg">
             <h1 class="title text-center">Your Character!</h1>
         </div>
     </section>

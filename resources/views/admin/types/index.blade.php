@@ -18,9 +18,9 @@
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
-                        <th class="text-center" scope="col">Show</th>
-                        <th class="text-center" scope="col">Edit</th>
-                        <th class="text-center" scope="col">Delete</th>
+                        <th class="text-center" scope="col"></th>
+                        <th class="text-center" scope="col"></th>
+                        <th class="text-center" scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>

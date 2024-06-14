@@ -25,6 +25,9 @@
                     <th scope="col">Cost</th>
                     <th class="text-center" scope="col">Damage Dice</th>
                     <th scope="col">Image</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>

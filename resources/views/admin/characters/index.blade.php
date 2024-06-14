@@ -22,9 +22,9 @@
                     <th class="text-center" scope="col">Speed</th>
                     <th class="text-center" scope="col">Life</th>
                     <th class="text-center" scope="col">Class</th>
-                    <th class="text-center" scope="col">Show</th>
-                    <th class="text-center" scope="col">Edit</th>
-                    <th class="text-center" scope="col">Delete</th>
+                    <th class="text-center" scope="col"></th>
+                    <th class="text-center" scope="col"></th>
+                    <th class="text-center" scope="col"></th>
                 </tr>
             </thead>
             <tbody>

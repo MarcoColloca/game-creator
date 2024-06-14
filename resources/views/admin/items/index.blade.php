@@ -3,18 +3,19 @@
 @section('title', 'Items')
 
 @section('content')
+<div class="char-bg">
 <section class="mt-5 py-1">
-    <div class="container bg-dark py-4 text-center">
-        <h1 class="title text-success">Items!</h1>
-        <a href="{{ route('admin.items.create') }}" class="btn btn-success mt-3">Create your Item</a>
+    <div class="container title-container p-2 mb-3 rounded-3 shadow-jg text-center">
+        <h1 class="">Items!</h1>
+        <a href="{{ route('admin.items.create') }}" class="btn btn-orange mt-3">Create your Item</a>
 
     </div>
 </section>
 
 
 <section class="mb-5 py-1">
-    <div class="bg-light container py-4">
-        <table class="table">
+    <div class="card-bg container rounded-3 py-4">
+        <table class=" card-bg table">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -70,4 +71,5 @@
         </table>
     </div>
 </section>
+</div>
 @endsection

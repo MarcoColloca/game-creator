@@ -3,17 +3,18 @@
 @section('title', 'Types')
 
 @section('content')
+<div class="char-bg">
 <section class="mt-5 py-1">
-    <div class="container bg-dark py-4 text-center">
-        <h1 class="title  text-success">Classes!</h1>
-        <a href="{{ route('admin.types.create') }}" class="btn btn-success mt-3">Create your class</a>
+    <div class="container title-container p-2 mb-3 rounded-3 shadow-jg text-center">
+        <h1 class="">Classes!</h1>
+        <a href="{{ route('admin.types.create') }}" class="btn btn-orange mt-3">Create your class</a>
     </div>
 </section>
 
 
 <section class="mb-5 py-1">
-    <div class="bg-light container py-4">
-        <div class="type-table-container">
+    <div class="card-bg container rounded-3 py-4">
+        <div class="card-bg container rounded-3 py-4">
             <table class="table">
                 <thead>
                     <tr>
@@ -57,4 +58,5 @@
         </div>
     </div>
 </section>
+</div>
 @endsection

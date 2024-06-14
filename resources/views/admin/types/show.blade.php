@@ -3,17 +3,18 @@
 @section('title', 'Type')
 
 @section('content')
+<div class="char-bg">
 <section class="mt-5 py-1">
-    <div class="container bg-dark py-4">
-        <h1 class="title text-center text-success"> {{$type->name}} Class.</h1>
+    <div class="container title-container p-2 mb-3 rounded-3 shadow-jg text-center">
+        <h1 class=""> {{$type->name}} Class.</h1>
     </div>
 </section>
 
 
 <section class="mb-5 py-1">
-    <div class="bg-light container py-4 position-relative">
+    <div class="container py-4 card-bg rounded-3 position-relative">
         <div class="row justify-content-center">
-            <div class="card my-card">
+            <div class="card my-card char-card">
                 <div class="card-body text-center">
                     
                     <h5 class="fw-bold text-start">Description: </h5>                    
@@ -25,8 +26,9 @@
         </div>
 
         <span class="back-to-types">
-            <a class="btn btn-outline-success" href="{{route('admin.types.index')}}"> ← </a>
+            <a class="btn btn-orange" href="{{route('admin.types.index')}}"> ← </a>
         </span>
     </div>
 </section>
+</div>
 @endsection

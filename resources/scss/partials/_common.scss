@@ -25,3 +25,10 @@ img.logo{
 main{
     flex-grow: 1;
 }
+.btn-orange{
+    background-color: darkorange;
+    &:hover{
+        background-color: rgb(255, 174, 0);
+        color:black
+    }
+}

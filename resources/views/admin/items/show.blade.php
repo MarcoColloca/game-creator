@@ -3,17 +3,18 @@
 @section('title', 'item')
 
 @section('content')
+<div class="char-bg">
 <section class="mt-5 py-1">
-    <div class="container bg-dark py-4">
-        <h1 class="title text-center text-success">Your Item!</h1>
+    <div class="container title-container p-2 mb-3 rounded-3 shadow-jg text-center">
+        <h1 class="">Your Item!</h1>
     </div>
 </section>
 
 
 <section class="mb-5 py-1">
-    <div class="bg-light container py-4">
+    <div class="container py-4 card-bg rounded-3">
         <div class="row justify-content-center">
-            <div class="card my-card">
+            <div class="card my-card card-bg">
                 <div class="card-body text-center">
                     <h2 class="mb-3">{{ $item->name }}</h2> 
                     <img class="icon" src="{{Vite::asset("resources/img/$item->image.png")}}" alt="">
@@ -31,4 +32,5 @@
         </div>
     </div>
 </section>
+</div>
 @endsection

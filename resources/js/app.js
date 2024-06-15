@@ -5,6 +5,15 @@ import * as bootstrap from 'bootstrap';
 import.meta.glob([
     '../img/**'
 ])
+import Cart from './components/Cart.vue'
+
+import { createApp } from 'vue';
+
+const app = createApp({});
+
+app.component('Cart', Cart);
+
+app.mount("#app");
 
 
 

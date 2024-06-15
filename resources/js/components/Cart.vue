@@ -12,7 +12,6 @@
                 ItemsArray: [],
                 ciao: 'ciao',
 
-                disabledArray: [],
             }
         },
 
@@ -27,30 +26,15 @@
                 })
 
 
-                this.disabledArray.push({
-                    id: item.id,
-                })
-
-
                 //console.log(this.ItemsArray)
             },
 
 
             removeItem(index, elementsRemoved){
                 this.ItemsArray.splice(index, elementsRemoved)
-    
+
             },
 
-
-            disable(id){
-                this.disabledArray.forEach(element => {
-
-                    if(this.disabledArray.includes(id)){
-                        return 'disabled'
-                    }
-
-                });
-            }
         }
     }
 
@@ -60,7 +44,7 @@
 <template>
     <div class="container">
         <h1 class="text-center">
-            Inventory Cart {{ ciao }}
+            Inventory Cart
         </h1>
 
         <table class="table">            
@@ -88,15 +72,62 @@
 
 
     <div class="container">
-        <div class="row gap-1 justify-content-center">
-            <div v-for="(item, i) in items" class="col-2">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title shop-item-title">{{item.name}}</h5>
-                        <button @click="pushItemId(item)" type="button" :data-item-id="item.id" class="w-100 btn btn-success mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping "></i>Add To Inventory</button>
+        <div class="accordion accordion-flush" id="accordionCartItems">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        List of Items
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionCartItems">
+                    <div class="row gap-2 justify-content-center mt-1">                     
+                        <div class="col-3" v-for="(item, i) in items">
+                            <div class="card">
+                                <div class="card-body cart-card">
+                                    <h5 class="card-title">{{item.name}}</h5>
+                                    <button @click="pushItemId(item), disable(i)" :class="bitch === true ? 'd-none' : ''" type="button" :data-item-id="item.id" class="btn btn-coral">Add To Inventory</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        
     </div>
 </template>
+
+
+<style lang="scss" scoped>
+    .card-title{
+        font-size: 18px;
+        font-weight: bolder;
+        color: black;
+    }
+
+    .cart-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid coral;
+    }
+
+
+    .accordion-button{
+        background-color: coral;
+        color: white;
+        font-weight: bolder;
+    }
+
+    .btn-coral{
+        background-color: coral;
+        color: white;
+        max-height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: fit-content;
+    }
+</style>

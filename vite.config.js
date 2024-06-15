@@ -3,9 +3,12 @@ import {
 } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import path from 'path'; // <-- require path from node
+import vue from '@vitejs/plugin-vue';
+
 
 export default defineConfig({
     plugins: [
+        vue(),
         laravel({
             // edit the first value of the array input to point to our new sass files and folder.
             input: ['resources/scss/app.scss', 'resources/js/app.js'],
@@ -17,7 +20,9 @@ export default defineConfig({
         alias: {
             '~icons': path.resolve(__dirname, 'node_modules/bootstrap-icons/font'),
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
-            '~resources': '/resources/'
+            '~resources': '/resources/',
+            '@': '/resources/js',
+            'vue': 'vue/dist/vue.esm-bundler.js'
         }
     }
 });

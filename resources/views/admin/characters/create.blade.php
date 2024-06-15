@@ -73,6 +73,12 @@
 
                 <div class="d-flex gap-2 my-form-container">
 
+
+                    <cart
+                     :items="{{ $items }}"
+                    ></cart>
+
+                    {{--
                     @foreach ($items as $item)                        
                         <div class="form-check">
                             <input @checked(in_array($item->id, old('items', []))) name="items[]" class="form-check-input"
@@ -98,7 +104,9 @@
 
                             <button>Add</button>
                         </form> -->
-                    @endforeach
+                    @endforeach 
+                    --}}
+                    
                 </div>
             </div>
 

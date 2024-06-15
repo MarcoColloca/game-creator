@@ -5,7 +5,7 @@
 @section('content')
 <section class="mt-5 py-1">
     <div class="container bg-dark py-4">
-        <h1 class="title text-center text-success">Create your Character!</h1>
+        <h1 class="title text-center text-coral">Create your Character!</h1>
     </div>
 </section>
 

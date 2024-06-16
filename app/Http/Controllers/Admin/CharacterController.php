@@ -54,7 +54,7 @@ class CharacterController extends Controller
 
         if($request->has('item'))
         {
-            //$project->items()->attach($form_data['items']);
+            //$project->items()->attach($request['items']);
 
             foreach ($request->item as $item) {
                 $qty[$item['id']] = ['qty' => $item['qty']];
@@ -108,7 +108,19 @@ class CharacterController extends Controller
 
         $character->save();
 
-        $character->items()->sync($request->items ?? []);
+        // $character->items()->sync($request->items ?? []);
+
+
+
+        if($request->item === null){
+            $request->item = [];
+        }
+
+        foreach ($request->item as $item) {
+            $qty[$item['id']] = ['qty' => $item['qty']];
+        }
+
+        $character->items()->sync($qty ?? []);
 
         return to_route("admin.characters.show", $character);
     }

@@ -77,35 +77,6 @@
                     <cart
                      :items="{{ $items }}"
                     ></cart>
-
-                    {{--
-                    @foreach ($items as $item)                        
-                        <div class="form-check">
-                            <input @checked(in_array($item->id, old('items', []))) name="items[]" class="form-check-input"
-                                type="checkbox" value="{{$item->id}}" id="item-{{$item->id}}">
-                            <label class="form-check-label" for="item-{{$item->id}}">
-                                {{$item->name}}
-                            </label>
-                        </div>
-
-                        <!-- <div class="mb-3">
-                                <label for="qty" class="form-label fw-bold">Qty</label>
-                                <input type="number" class="form-control" id="qty" name="qty[]"
-                                    placeholder="Insert qty" value="{{ old('qty') }}">
-                            </div> -->
-                        <!-- <form class="form-group mb-3">
-                            <label class="form-label fw-bold" for="item_id">item of Project</label>
-                            <select class="form-control" name="item_id" id="item_id">
-                                <option value="">-- Seleziona Item --</option>
-                                @foreach ($items as $item)                                
-                                    <option @selected($item->id == old('item_id')) value="{{$item->id}}">{{$item->name}}</option>
-                                @endforeach
-                            </select>
-
-                            <button>Add</button>
-                        </form> -->
-                    @endforeach 
-                    --}}
                     
                 </div>
             </div>

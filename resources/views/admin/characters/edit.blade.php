@@ -70,6 +70,23 @@
             </div>
 
             <!-- Character Items -->
+            <div class="form-group mb-3 ">
+                <label class="form-label fw-bold" for="item_id">Select your Items</label>
+
+                <div class="d-flex gap-2 my-form-container">
+
+                    <inventory
+                    
+                     :items="{{ $items }}"
+
+                     :inventory="{{$character->items}}"
+                    ></inventory>
+                    
+                </div>
+            </div>
+
+
+            {{--
             <div class="form-group mb-3">
                 <label for="item_id">Select your items</label>
                 <div class="d-flex gap-2 my-form-container">
@@ -84,7 +101,7 @@
                     @endforeach
                 </div>                    
             </div>
-
+            --}}
 
             <!-- Form Submit -->
             <button class="btn btn-primary">Edit</button>

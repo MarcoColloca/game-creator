@@ -18,15 +18,16 @@
 
         methods:{
             pushItemId(item){
-            
-                this.ItemsArray.push({
-                    id: item.id,
-                    name: item.name,
-                    qty: 1,
-                })
+                
+                item.qty = 1;
 
+                if (this.ItemsArray.includes(item) === false){                    
 
-                //console.log(this.ItemsArray)
+                    this.ItemsArray.push(item);
+
+                    console.log(item.qty)
+                }
+                
             },
 
 
@@ -35,6 +36,13 @@
 
             },
 
+
+            hide(item){
+                if (this.ItemsArray.includes(item) === true){
+                    return 'hidden'
+                }
+
+            },
         }
     }
 
@@ -60,7 +68,7 @@
                     <td class="me-3">{{ item.name }}</td>
                     <td class="me-3">
                         <input type="hidden" :value="item.id" :name="`item[${i}][id]`">
-                        <input class="cart-quantity-input" type="number" :value="item.qty" :name="`item[${i}][qty]`" id="qty" style="width: 50px">
+                        <input class="cart-quantity-input" type="number" :model-value="item.qty" :name="`item[${i}][qty]`" id="qty" min="1">
                     </td>
                     <td class="me-3">
                         <h3 @click="removeItem(i, 1)" class="btn btn-danger">Remove</h3>
@@ -85,7 +93,7 @@
                             <div class="card">
                                 <div class="card-body cart-card">
                                     <h5 class="card-title">{{item.name}}</h5>
-                                    <button @click="pushItemId(item), disable(i)" :class="bitch === true ? 'd-none' : ''" type="button" :data-item-id="item.id" class="btn btn-coral">Add To Inventory</button>
+                                    <button @click="pushItemId(item)" :class="hide(item)" type="button" :data-qty="1" :data-item-id="item.id" class="btn btn-coral">Add To Inventory</button>
                                 </div>
                             </div>
                         </div>
@@ -129,5 +137,15 @@
         justify-content: center;
         align-items: center;
         max-width: fit-content;
+    }
+
+    .cart-quantity-input{
+        width: 50px;
+    }
+
+    .hidden{
+        background-color: white;
+        cursor: default;
+        pointer-events: none;
     }
 </style>

@@ -42,6 +42,7 @@
             removeItem(index, elementsRemoved){
                 this.ItemsArray.splice(index, elementsRemoved)
 
+                localStorage.setItem("Item", JSON.stringify(this.ItemsArray));
             },
 
 

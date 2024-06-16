@@ -39,7 +39,7 @@ class CharacterController extends Controller
      */
     public function store(StoreCharacterRequest $request)
     {
-        //dd($request->all());
+        // dd($request->all());
 
 
         //VALIDATION SPOSTATA NELLO StoreCharacterRequest
@@ -52,11 +52,16 @@ class CharacterController extends Controller
         $new_character = Character::create($form_data);
 
 
-        if($request->has('items'))
+        if($request->has('item'))
         {
             //$project->items()->attach($form_data['items']);
 
-            $new_character->items()->attach($request->items);
+            foreach ($request->item as $item) {
+                $qty[$item['id']] = ['qty' => $item['qty']];
+            }
+
+
+            $new_character->items()->attach($qty);
 
         }
 
@@ -95,6 +100,8 @@ class CharacterController extends Controller
     public function update(UpdateCharacterRequest $request, Character $character)
     {
         // VALIDATION SPOSTATA NELL'UpdateCharacterRequest
+
+        
 
         $form_data = $request->validated();
         $character->fill($form_data);

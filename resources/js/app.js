@@ -6,12 +6,14 @@ import.meta.glob([
     '../img/**'
 ])
 import Cart from './components/Cart.vue'
+import Inventory from './components/Inventory.vue'
 
 import { createApp } from 'vue';
 
 const app = createApp({});
 
 app.component('Cart', Cart);
+app.component('Inventory', Inventory)
 
 app.mount("#app");
 

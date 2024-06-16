@@ -2,6 +2,10 @@
 
 @section('title', 'Character')
 
+<?php 
+    $img = $character->type->name
+?>
+
 @section('content')
 <div class="char-bg">
 
@@ -15,6 +19,9 @@
     <section class="mb-5 py-1">
         <div class="container py-4 card-bg rounded-3">
             <div class="row justify-content-center gap-5">
+                <div class="card my-card char-card ">
+                    <img class="my-card-img" src="{{Vite::asset("resources/img/$img.png")}}" alt="">
+                </div>
                 <div class="card my-card char-card ">
                     <div class="card-body text-center">
                         <h2 class="card-title mb-4">{{ $character->name }}</h2>

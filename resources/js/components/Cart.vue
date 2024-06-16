@@ -15,17 +15,25 @@
             }
         },
 
+        created(){            
+            // console.log(localStorage)
+            this.ItemsArray = JSON.parse(localStorage.getItem("Item") || '[]')
+
+            // console.log(this.ItemsArray)
+        },
 
         methods:{
             pushItemId(item){
                 
+                // console.log(this.ItemsArray)
                 item.qty = 1;
 
                 if (this.ItemsArray.includes(item) === false){                    
 
                     this.ItemsArray.push(item);
 
-                    console.log(item.qty)
+                    localStorage.setItem("Item", JSON.stringify(this.ItemsArray));                    
+                    
                 }
                 
             },
@@ -37,8 +45,26 @@
             },
 
 
-            hide(item){
-                if (this.ItemsArray.includes(item) === true){
+            hide(id){
+
+                // if (this.ItemsArray.includes(item) === true){
+                //     return 'hidden'
+                // }
+                
+                // console.log(id)
+
+                let hidden = false;
+
+                this.ItemsArray.forEach(element => {
+                    // if(element.id == id){console.log(element.id + "contained"); hidden = true;}
+                    if(element.id == id)
+                    {
+                        hidden = true;
+                    }                  
+                });
+
+
+                if(hidden === true){
                     return 'hidden'
                 }
 
@@ -68,7 +94,7 @@
                     <td class="me-3">{{ item.name }}</td>
                     <td class="me-3">
                         <input type="hidden" :value="item.id" :name="`item[${i}][id]`">
-                        <input class="cart-quantity-input" type="number" :model-value="item.qty" :name="`item[${i}][qty]`" id="qty" min="1">
+                        <input class="cart-quantity-input" type="number" :value="item.qty" :name="`item[${i}][qty]`" id="qty" min="1">
                     </td>
                     <td class="me-3">
                         <h3 @click="removeItem(i, 1)" class="btn btn-danger">Remove</h3>
@@ -88,12 +114,13 @@
                     </button>
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionCartItems">
-                    <div class="row gap-2 justify-content-center mt-1">                     
+                    <div class="row gap-2 justify-content-center mt-1">
+                        
                         <div class="col-3" v-for="(item, i) in items">
                             <div class="card">
                                 <div class="card-body cart-card">
                                     <h5 class="card-title">{{item.name}}</h5>
-                                    <button @click="pushItemId(item)" :class="hide(item)" type="button" :data-qty="1" :data-item-id="item.id" class="btn btn-coral">Add To Inventory</button>
+                                    <button @click="pushItemId(item)" :class="hide(item.id)" type="button" :data-qty="1" :data-item-id="item.id" class="btn btn-coral">Add To Inventory</button>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +129,7 @@
             </div>
         </div>
 
-        
+      
     </div>
 </template>
 

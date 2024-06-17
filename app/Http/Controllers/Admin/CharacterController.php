@@ -77,7 +77,9 @@ class CharacterController extends Controller
 
         $character->load(['items', 'type']);
 
-        return view("admin.characters.show", compact("character"));
+        $img = $character->type->name;
+
+        return view("admin.characters.show", compact("character", 'img'));
     }
 
     /**

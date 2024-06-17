@@ -34,7 +34,10 @@ class CharacterController extends Controller
 
         $character->load(['items', 'type']);
 
-        return view("guest.characters.show", compact("character"));
+        $img = $character->type->name;
+
+
+        return view("guest.characters.show", compact("character", 'img'));
     }
 
 

@@ -2,11 +2,6 @@
 
 @section('title', 'Character')
 
-<?php 
-    $img = $character->type->name
-?>
-
-
 
 @section('content')
 <div class="char-bg">

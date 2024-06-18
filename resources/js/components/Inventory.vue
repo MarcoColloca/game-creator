@@ -5,7 +5,8 @@
 
         props:{
             items: Array,
-            inventory: Array
+            inventory: Array,
+            hasError: Boolean,
         },
     
         data(){
@@ -18,11 +19,15 @@
 
         created(){
 
-            this.startingInventory();
+            if (this.hasError === 'true') {
+                this.ItemsArray = JSON.parse(localStorage.getItem("Item") || '[]')
+            } else {
+                // svuotare il local storage se esiste un valore
+                localStorage.clear();
+                this.startingInventory();
+            }
 
-            this.updateInventory();
-
-            // console.log(this.inventory)
+            console.log(this.inventory)
         },
 
         methods:{
@@ -88,8 +93,8 @@
 
 
             updateInventory(){                
-
-                this.ItemsArray = JSON.parse(localStorage.getItem("Item") || '[]')                                    
+                
+                this.ItemsArray = JSON.parse(localStorage.getItem("Item") || '[]')
             }
         }        
     }

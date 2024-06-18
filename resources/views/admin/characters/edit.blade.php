@@ -80,6 +80,8 @@
                      :items="{{ $items }}"
 
                      :inventory="{{$character->items}}"
+                     
+                     has-error="{{ $errors->any() === false ? 'false' : 'true' }}"
                     ></inventory>
                     
                 </div>

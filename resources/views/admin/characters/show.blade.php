@@ -8,8 +8,9 @@
 <div class="char-bg">
 
     <section >
-        <div class="container title-container p-2 mb-3 rounded-3 shadow-jg">
+        <div class="container title-container p-2 mb-3 rounded-3 shadow-jg position-relative">
             <h1 class="title text-center">Your Character!</h1>
+            <a class="btn btn-orange my-btn" href="{{ route('admin.characters.edit', $character) }}">Edit</a>
         </div>
     </section>
     

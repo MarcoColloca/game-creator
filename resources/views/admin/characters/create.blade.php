@@ -14,6 +14,7 @@
     <div class="bg-light container py-4">
         <form action="{{ route('admin.characters.store') }}" method="POST">
             @csrf
+
             <!-- Charcater Name -->
             <div class="mb-3">
                 <label for="name" class="form-label fw-bold">Name</label>
@@ -73,9 +74,8 @@
 
                 <div class="d-flex gap-2 my-form-container">
 
-
                     <cart
-                     :items="{{ $items }}"
+                     :items="{{ $items }}" has-error="{{ $errors->any() === false ? 'false' : 'true' }}"
                     ></cart>
                     
                 </div>
